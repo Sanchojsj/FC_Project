@@ -7,16 +7,16 @@
 <div class="row justify-content-center">
 <div class="col-lg-7">
     <div class="card shadow-lg border-0 rounded-lg mt-5">
-        <div class="card-header"><h3 class="text-center font-weight-light my-4">New Order</h3></div>
+        <div class="card-header"><h3 class="text-center font-weight-light my-4">Añadir Nuevo Pedido</h3></div>
         <div class="card-body">
             <form method="POST" action="{{url('/insert-new-order') }}" enctype="multipart/form-data">
             @csrf
                     <div class="form-row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="small mb-1" for="inputFirstName">Customer Name</label>
+                            <label class="small mb-1" for="inputFirstName">Nombre del Cliente</label>
                             <select id="name" name="name" class="form-control">
-                                <option selected>Choose...</option>
+                                <option selected>Selecionar Nombre...</option>
                                 @foreach($customers as $c)
                                     <option value="{{$c->id}}">{{ $c->name }}</option>
                                 @endforeach
@@ -50,9 +50,9 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="small mb-1" for="inputState">Product Code</label>
+                            <label class="small mb-1" for="inputState">Codigo del Producto</label>
                             <select id="inputState" name="code" class="form-control">
-                            <option selected>Choose...</option>
+                            <option selected>Seleccionar Codigo...</option>
                             @foreach($products as $row)
                                 @if( $row->stock > 1)
                                     <option>{{ $row->product_code }}</option>
@@ -63,9 +63,9 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="small mb-1" for="inputState">Product Name</label>
+                            <label class="small mb-1" for="inputState">Nombre del Producto</label>
                             <select id="inputState" name="name" class="form-control">
-                            <option selected>Choose...</option>
+                            <option selected>Seleccionar Producto</option>
                             @foreach($products as $row)
                                 @if( $row->stock > 1)
                                     <option value="{{$row->product_code}}">{{ $row->name }}</option>
@@ -77,13 +77,13 @@
                     
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="small mb-1" for="inputLastName">Quantity</label>
+                            <label class="small mb-1" for="inputLastName">Cantidad</label>
                             <input class="form-control py-4" name="quantity" type="text"  />
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group mt-4 mb-0"><button class="btn btn-primary btn-block">Submit</button></div>
+                <div class="form-group mt-4 mb-0"><button class="btn btn-primary btn-block">Enviar</button></div>
             </form>
         </div>
     </div>

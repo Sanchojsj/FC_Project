@@ -3,20 +3,20 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table mr-1"></i>
-        Orders List
+        Lista de Pedidos
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Order Id</th>
-                        <th>Product Code</th>
-                        <th>Product Name</th>
-                        <th>Customer Email</th>
-                        <th>Quantity</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th>Id del Pedido</th>
+                        <th>Codigo de Producto</th>
+                        <th>Nombre de Producto</th>
+                        <th>Email del Cliente</th>
+                        <th>Cantidad</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,16 +30,16 @@
                         <td>{{ $row->quantity }}</td>
                         <td>
                             @if($row->order_status=='0')
-                                <a href="#" class="btn btn-sm btn-info">Pending</a>
+                                <a href="#" class="btn btn-sm btn-info">Pendiente</a>
                             @else
-                                <a href="#" class="btn btn-sm btn-info">Delivered</a>
+                                <a href="#" class="btn btn-sm btn-info">Entregado</a>
                             @endif
                         </td>
                         <td>
                             @if($row->order_status=='0')
-                                <a href="{{ 'add-invoice/'.$row->id }}" class="btn btn-sm btn-info">createInvoice</a>
+                                <a href="{{ 'add-invoice/'.$row->id }}" class="btn btn-sm btn-info">CrearFactura</a>
                             @else
-                                <a href="#" class="btn btn-sm btn-info">Invoiced</a>
+                                <a href="#" class="btn btn-sm btn-info">Facturado</a>
                             @endif
                             
                         </td>

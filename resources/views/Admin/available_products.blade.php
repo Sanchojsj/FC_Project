@@ -3,20 +3,20 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table mr-1"></i>
-        Available Products
+        Productos Disponibles
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Code</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Stock</th>
-                        <th>Unit Price</th>
-                        <th>Sales Unit Price</th>
-                        <th>Action</th>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Categoria</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unidad</th>
+                        <th>Precio Venta</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 
@@ -36,7 +36,7 @@
                         <td>{{ $row->unit_price }}</td>
                         <td>{{ $row->sales_unit_price }}</td>
                         <td>
-                        	<a href="{{ 'add-order/'.$row->id }}" class="btn btn-sm btn-info">Order</a>
+                        	<a href="{{ 'add-order/'.$row->id }}" class="btn btn-sm btn-info">Ordenar Pedido</a>
                         </td>
                     </tr>
                     @endforeach

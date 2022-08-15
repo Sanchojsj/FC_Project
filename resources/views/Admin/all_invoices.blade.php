@@ -3,25 +3,25 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table mr-1"></i>
-        Invoices List
+        Lista de Facturas
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Invoice No.</th>
-                        <th>Customer Name</th>
-                        <th>Customer Email</th>
-                        <th>Company</th>
-                        <th>Address</th>
+                        <th>Factura No.</th>
+                        <th>Nombre del Cliente</th>
+                        <th>Email del Cliente</th>
+                        <th>Empresa</th>
+                        <th>Direccion</th>
                         <!-- <th>Total_Price</th> -->
-                        <th>Product Name</th>
+                        <th>Nombre del Producto</th>
                         <!-- <th>Sales Stock Price</th> -->
-                        <th>Quantity</th>
-                        <th>Total Cost</th>
-                        <th>Due</th>
-                        <th>Date</th>
+                        <th>Cantidad</th>
+                        <th>Coste Total</th>
+                        <th>Deuda</th>
+                        <th>Fecha</th>
                     </tr>
                 </thead>
                 <tbody>

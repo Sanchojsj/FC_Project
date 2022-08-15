@@ -6,19 +6,19 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table mr-1"></i>
-        Customers List
+        Lista de Clientes
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Nombre</th>
                         <th>Email</th>
-                        <th>Company</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Action</th>
+                        <th>Empresa</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +30,7 @@
                         <td>{{ $row->address }}</td>
                         <td>{{ $row->phone }}</td>
                         <td>
-                            <a href="{{URL::to('edit_customer')}}" class="btn btn-sm btn-info">Edit</a>
+                            <a href="{{URL::to('edit_customer')}}" class="btn btn-sm btn-info">Editar</a>
                             <!-- <a href="{{ 'add-order/'.$row->id }}" class="btn btn-sm btn-info">Order</a> -->
                         </td>
                     </tr>

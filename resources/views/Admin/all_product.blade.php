@@ -3,20 +3,20 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table mr-1"></i>
-        Products in Stock
+        Productos en Inventario
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Code</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Stock</th>
-                        <th>Unit Price</th>
-                        <th>Sale Price</th>
-                        <th>Action</th>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Categoria</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unidad</th>
+                        <th>Precio Venta</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,9 +35,9 @@
                         <td>{{ $row->unit_price }}</td>
                         <td>{{ $row->sales_unit_price }}</td>
                         <td>
-                        	<a href="#" class="btn btn-sm btn-info">Edit</a>
-                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
-                        	<a href="{{ 'purchase-products/'.$row->id }}" class="btn btn-sm btn-info">Purchase</a>
+                        	<a href="#" class="btn btn-sm btn-info">Editar</a>
+                            <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
+                        	<a href="{{ 'purchase-products/'.$row->id }}" class="btn btn-sm btn-info">Añadir Cantidad</a>
                         </td>
                     </tr>
                     @endforeach

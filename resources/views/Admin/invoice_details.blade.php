@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>A simple, clean, and responsive HTML invoice template</title>
+		<title>Detalles de Factura</title>
 
 		<style>
 			.invoice-box {
@@ -110,7 +110,7 @@
 						<table>
 							<tr>
 								<td class="title">
-									<h2>SEP Company Ltd.</h2>
+									<h2>Finca los Cerezos.</h2>
 								</td>
 
 								<td>
@@ -127,9 +127,9 @@
 						<table>
 							<tr>
 								<td>
-									SEP Company Ltd.<br />
+									Finca los Cerezos.<br />
 									GEC<br />
-									Chittagong, Bangladesh
+									Manizales, Colombia
 								</td>
 
 								<td>
@@ -143,41 +143,41 @@
 				</tr>
 
 				<tr class="heading">
-					<td>Details</td>
+					<td>Detalles</td>
 
 					<td>#</td>
 				</tr>
 
 				<tr class="item">
-					<td>Product Name</td>
+					<td>Nombre del Producto</td>
 					<td>{{ $data->product_name }}</td>
 				</tr>
 				<tr class="item">
-					<td>Product Quantity</td>
+					<td>Cantidad del Producto</td>
 					<td>{{ $data->quantity }}</td>
 				</tr>
 				<tr class="item">
-					<td>Unit price</td>
+					<td>Precio Unidad</td>
 					<td>{{ $data->price }}</td>
 				</tr>
 				<tr class="item">
-					<td>Total price</td>
+					<td>Precio Total</td>
 					<td>{{ $data->total }}</td>
 				</tr>
 				<tr class="item">
-					<td>Payment</td>
+					<td>Pago</td>
 					<td>{{ $data->payment }}</td>
 				</tr>
 				<tr class="item">
-					<td>Due</td>
+					<td>Deuda</td>
 					<td>{{ $data->due }}</td>
 				</tr>
 
 
 				<tr class="item last">
-					<td>Status</td>
+					<td>Estado</td>
 
-					<td>Product on Delivery</td>
+					<td>Producto en Entrega</td>
 				</tr>
 
 				<tr class="total">
