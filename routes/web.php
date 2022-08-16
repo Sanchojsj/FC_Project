@@ -1,10 +1,12 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 
 /*
@@ -21,6 +23,21 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('auth.login');
 });
+
+//post
+Route::get('/',[PostController::class,'index']);
+
+Route::get('/create',function(){
+return view('create');
+});
+Route::post('/post',[PostController::class,'store']);
+Route::delete('/delete/{id}',[PostController::class,'destroy']);
+Route::get('/edit/{id}',[PostController::class,'edit']);
+
+Route::delete('/deleteimage/{id}',[PostController::class,'deleteimage']);
+Route::delete('/deletecover/{id}',[PostController::class,'deletecover']);
+
+Route::put('/update/{id}',[PostController::class,'update']);
 
 //product
 Route::get('/add-product', function () {
