@@ -55,6 +55,18 @@ Products<!DOCTYPE html>
                             </a>
                             <div class="sb-sidenav-menu-heading">Interfaz</div>
 
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePrueba" aria-expanded="false" aria-controls="collapsePrueba">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-broom"></i></div>
+                                Prueba
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePrueba" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('create') }}">Crear</a>
+                                    <a class="nav-link" href="{{ route('index') }}">Inventario</a>
+                                </nav>
+                            </div>
+
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="false" aria-controls="collapseProducts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Productos

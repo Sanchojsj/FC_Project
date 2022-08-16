@@ -1,44 +1,38 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel CRUD With Multiple Image Upload</title>
+@extends('layouts.admin_master')
 
-      <!-- Bootstrap CSS -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-     <!-- Font-awesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+@section('content')
 
-    </head>
-    <body>
-
-        <div class="container" style="margin-top: 50px;">
-            <div class="row">
+<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Editar Producto</h3></div>
+                    <div class="card-body">
+                        <div class="form-row">
 
 
                 <div class="col-lg-3">
-                    <p>Cover:</p>
+                    <p>Portada:</p>
+                    <img src="/cover/{{ $posts->cover }}" class="img-responsive" style="max-height: 100px; max-width: 100px;" alt="" srcset="">
                     <form action="/deletecover/{{ $posts->id }}" method="post">
-                    <button class="btn text-danger">X</button>
+                    <button class="btn text-danger">X Eliminar</button>
                     @csrf
                     @method('delete')
                     </form>
-                    <img src="/cover/{{ $posts->cover }}" class="img-responsive" style="max-height: 100px; max-width: 100px;" alt="" srcset="">
                     <br>
 
 
 
                      @if (count($posts->images)>0)
-                     <p>Images:</p>
+                     <p>Imagenes:</p>
                      @foreach ($posts->images as $img)
+                     <img src="/images/{{ $img->image }}" class="img-responsive" style="max-height: 100px; max-width: 100px;" alt="" srcset="">
                      <form action="/deleteimage/{{ $img->id }}" method="post">
-                         <button class="btn text-danger">X</button>
+                         <button class="btn text-danger">X Eliminar</button>
                          @csrf
                          @method('delete')
                          </form>
-                     <img src="/images/{{ $img->image }}" class="img-responsive" style="max-height: 100px; max-width: 100px;" alt="" srcset="">
                      @endforeach
                      @endif
 
@@ -46,7 +40,6 @@
 
 
                 <div class="col-lg-6">
-                    <h3 class="text-center text-danger"><b>Udate Post</b> </h3>
 				    <div class="form-group">
                         <form action="/update/{{ $posts->id }}" method="post" enctype="multipart/form-data">
                             @csrf
@@ -54,23 +47,22 @@
                          <input type="text" name="title" class="form-control m-2" placeholder="title" value="{{ $posts->title }}">
         				 <input type="text" name="author" class="form-control m-2" placeholder="author" value="{{ $posts->author }}">
                          <Textarea name="body" cols="20" rows="4" class="form-control m-2" placeholder="body">{{ $posts->body }}</Textarea>
-                         <label class="m-2">Cover Image</label>
+                         <label class="m-2">Imagen de Portada</label>
                          <input type="file" id="input-file-now-custom-3" class="form-control m-2" name="cover">
 
-                         <label class="m-2">Images</label>
+                         <label class="m-2">Imagenes</label>
                          <input type="file" id="input-file-now-custom-3" class="form-control m-2" name="images[]" multiple>
 
-                        <button type="submit" class="btn btn-danger mt-3 ">Submit</button>
+                        <button type="submit" class="btn btn-danger mt-3 ">Enviar</button>
                         </form>
                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+</main>
 
-
-
-         </body>
-</html>
-
+@endsection
 
 
 

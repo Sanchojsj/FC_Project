@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
         $posts=Post::all();
-        return view('index')->with('posts',$posts);
+        return view('Admin.index')->with('posts',$posts);
     }
 
     /**
@@ -64,7 +64,7 @@ class PostController extends Controller
                 }
             }
 
-            return redirect("/");
+            return redirect("/index");
 
     }
 
@@ -74,9 +74,10 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        //
+        $posts=Post::findOrFail($id);
+        return view('Admin.read')->with('posts',$posts);
     }
 
     /**
@@ -88,7 +89,7 @@ class PostController extends Controller
     public function edit($id)
     {
        $posts=Post::findOrFail($id);
-        return view('edit')->with('posts',$posts);
+        return view('Admin.edit')->with('posts',$posts);
     }
 
     /**
@@ -130,7 +131,7 @@ class PostController extends Controller
             }
         }
 
-        return redirect("/");
+        return redirect("/index");
 
     }
 

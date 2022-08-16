@@ -25,14 +25,15 @@ Route::get('/', function () {
 });
 
 //post
-Route::get('/',[PostController::class,'index']);
+Route::get('/index',[PostController::class,'index'])->name('index');
 
 Route::get('/create',function(){
-return view('create');
-});
+return view('Admin.create');
+})->name('create');;
 Route::post('/post',[PostController::class,'store']);
 Route::delete('/delete/{id}',[PostController::class,'destroy']);
 Route::get('/edit/{id}',[PostController::class,'edit']);
+Route::get('/read/{id}',[PostController::class,'show'])->name('read');
 
 Route::delete('/deleteimage/{id}',[PostController::class,'deleteimage']);
 Route::delete('/deletecover/{id}',[PostController::class,'deletecover']);
