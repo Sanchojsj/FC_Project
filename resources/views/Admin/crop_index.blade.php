@@ -3,41 +3,55 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table mr-1"></i>
-        Productos en Inventario
+        Cultivos en Inventario <a href="/crop_create" class="btn btn-sm btn-primary">Añadir nuevo cultivo</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
+                <thead class="table-dark">
                     <tr>
-                        <th>Codigo</th>
+                        <th>ID</th>
+                        <th>Codigo Cultivo</th>
                         <th>Nombre</th>
-                        <th>Categoria</th>
-                        <th>Cantidad</th>
-                        <th>Precio Unidad</th>
-                        <th>Precio Venta</th>
+                        <th>Fecha de Inicio</th>
+                        <th>Fecha de Entrega</th>
+                        <th>Area del Terreno</th>
+                        <th>Fase</th>
+                        <th>Tipo de Cultivo</th>
+                        <th>Descripcion</th>
+                        <th>Portada</th>
                         <th>Acciones</th>
+                        <th>Eliminar</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
-                	@foreach($products as $row)
+                	@foreach($crops as $crop)
                     <tr>
-                        <td>{{ $row->product_code }}</td>
-                        <td>{{ $row->name }}</td>
-                        <td>{{ $row->category }}</td>
+                        <th scope="row">{{ $crop->id }}</th>
+                        <td>{{ $crop->crop_code }}</td>
+                        <td>{{ $crop->crop_name }}</td>
+                        <td>{{ $crop->start_date }}</td>
+                        <td>{{ $crop->finish_date }}</td>
                         
-                        @if($row->stock > '0')
-                            <td>{{ $row->stock }}</td>
+                        @if($crop->land_area > '0')
+                            <td>{{ $crop->land_area }}</td>
                         @else
-                            <td>stockout</td>
+                            <td>No hay terreno</td>
                         @endif
 
-                        <td>{{ $row->unit_price }}</td>
-                        <td>{{ $row->sales_unit_price }}</td>
+                        <td>{{ $crop->type_phase }}</td>
+                        <td>{{ $crop->type_crop }}</td>
+                        <td>{{ $crop->body }}</td>
+                        <td><img src="cover/{{ $crop->cover }}" class="img-responsive" style="max-height:100px; max-width:100px" alt="" srcset=""></td>
+                        <td><a href="/crop_edit/{{ $crop->id }}" class="btn btn-sm btn-info">editar</a>
+                            <a href="/crop_ver/{{ $crop->id }}" class="btn btn-sm btn-success">ver mas</a></td>
                         <td>
-                        	<a href="#" class="btn btn-sm btn-info">Editar</a>
-                            <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
-                        	<a href="{{ 'purchase-products/'.$row->id }}" class="btn btn-sm btn-info">Añadir Cantidad</a>
+                                <form action="/delete/{{ $crop->id }}" method="post">
+                                 <button class="btn btn-sm btn-danger" onclick="return confirm('Seguro de Eliminar?');" type="submit">Eliminar</button>
+                                 @csrf
+                                 @method('delete')
+                                </form>
                         </td>
                     </tr>
                     @endforeach

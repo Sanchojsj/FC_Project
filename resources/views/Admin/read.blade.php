@@ -50,8 +50,10 @@
 
                          <label class="m-2">Imagenes</label>
                          <input type="file" id="formFileDisabled" disabled class="form-control m-2" name="images[]" multiple readonly>
-
-                        <button type="submit" class="btn btn-primary mt-3 ">Volver</button>
+                        
+                        <td>
+                            <a href="/index" class="btn btn-primary mt-3">Volver</a></td>
+                        <td>
                         </form>
                    </div>
                 </div>

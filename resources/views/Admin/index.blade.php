@@ -14,7 +14,7 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th>Description</th>
-                    <th>Cover</th>
+                    <th>Portada</th>
                     <th>Acciones</th>
                     <th>Eliminar</th>
                   </tr>

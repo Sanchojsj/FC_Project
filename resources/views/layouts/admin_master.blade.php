@@ -6,7 +6,7 @@ Products<!DOCTYPE html>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>InventoryManagementSystem</title>        
+        <title>AgroSena 4.0</title>        
 
         <link href="{{ asset('backend') }}/css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -67,73 +67,17 @@ Products<!DOCTYPE html>
                                 </nav>
                             </div>
 
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="false" aria-controls="collapseProducts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Productos
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCultivos" aria-expanded="false" aria-controls="collapseCultivos">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-seedling"></i></i></div>
+                                Cultivos
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseProducts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapseCultivos" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('add.product') }}">Nuevo Producto</a>
-                                    <a class="nav-link" href="{{ route('all.product') }}">Reporte de Inventario</a>
-                                    <a class="nav-link" href="{{ route('available.products') }}">Productos Disponibles</a>
+                                    <a class="nav-link" href="{{ route('crop_create') }}">Crear Cultivo</a>
+                                    <a class="nav-link" href="{{ route('crop_index') }}">Inventario</a>
                                 </nav>
                             </div>
-                            
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOrders" aria-expanded="false" aria-controls="collapseOrders">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Pedidos
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseOrders" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('new.order')}}">Nuevo Pedido</a>
-                                </nav>
-                            </div>
-                            <div class="collapse" id="collapseOrders" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('all.orders')}}">Lista de Pedidos</a>
-                                </nav>
-                            </div>
-                            <div class="collapse" id="collapseOrders" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('pending.orders')}}">Pedidos Pendientes</a>
-                                </nav>
-                            </div>
-                            <div class="collapse" id="collapseOrders" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('delivered.orders')}}">Pedidos Entregados</a>
-                                </nav>
-                            </div>
-
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInvoice" aria-expanded="false" aria-controls="collapseInvoice">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Ventas
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseInvoice" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('new.invoice') }}">Nueva Factura</a>
-                                    <a class="nav-link" href="{{ route('all.invoices') }}">Lista de Facturas</a>
-                                </nav>
-                            </div>
-
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAuthentication" aria-expanded="false" aria-controls="collapseAuthentication">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Clientes
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseAuthentication" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('add.customer') }}">Nuevo Cliente</a>
-                                </nav>
-                            </div>
-                            <div class="collapse" id="collapseAuthentication" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('all.customers') }}">Lista de Clientes</a>
-                                </nav>
-                            </div>
-
                             
                             
                     </div>
@@ -146,7 +90,7 @@ Products<!DOCTYPE html>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; AgroSena 4.0</div>
+                            <div class="text-muted">Copyright &copy; AgroSena 4.0, Santiago Naranjo S.</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;

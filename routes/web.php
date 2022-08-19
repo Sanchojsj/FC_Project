@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\CropController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\InvoiceController;
@@ -39,6 +39,22 @@ Route::delete('/deleteimage/{id}',[PostController::class,'deleteimage']);
 Route::delete('/deletecover/{id}',[PostController::class,'deletecover']);
 
 Route::put('/update/{id}',[PostController::class,'update']);
+
+//crop
+Route::get('/crop_index',[CropController::class,'index'])->name('crop_index');
+
+Route::get('/crop_create',function(){
+    return view('Admin.crop_create');
+    })->name('crop_create');;
+Route::post('/crop_post',[CropController::class,'store']);
+Route::delete('/delete/{id}',[CropController::class,'destroy']);
+Route::get('/crop_edit/{id}',[CropController::class,'edit']);
+Route::get('/crop_ver/{id}',[CropController::class,'show'])->name('crop_read');
+
+Route::delete('/deleteimage/{id}',[CropController::class,'deleteimage']);
+Route::delete('/deletecover/{id}',[CropController::class,'deletecover']);
+
+Route::put('/crop_update/{id}',[CropController::class,'update']);
 
 //product
 Route::get('/add-product', function () {
