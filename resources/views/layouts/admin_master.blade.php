@@ -16,7 +16,7 @@ Products<!DOCTYPE html>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand"><i class="fa-solid fa-seedling"></i> AgroFinca 4.0</a>
+            <a class="navbar-brand"><i class="fa-solid fa-spa"></i> AgroFinca 4.0</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -55,18 +55,6 @@ Products<!DOCTYPE html>
                             </a>
                             <div class="sb-sidenav-menu-heading">Interfaz</div>
 
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePrueba" aria-expanded="false" aria-controls="collapsePrueba">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-broom"></i></div>
-                                Prueba
-                                <div class="sb-sidenav-collapse-arrow"><i class="fa-solid fa-broom"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePrueba" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{ route('create') }}">Crear</a>
-                                    <a class="nav-link" href="{{ route('index') }}">Inventario</a>
-                                </nav>
-                            </div>
-
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCultivos" aria-expanded="false" aria-controls="collapseCultivos">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-seedling"></i></div>
                                 Cultivos
@@ -75,7 +63,7 @@ Products<!DOCTYPE html>
                             <div class="collapse" id="collapseCultivos" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('crop_create') }}">Crear Cultivo</a>
-                                    <a class="nav-link" href="{{ route('crop_index') }}">Inventario</a>
+                                    <a class="nav-link" href="{{ route('crop_index') }}">Inventario de cultivos</a>
                                 </nav>
                             </div>
 
@@ -87,7 +75,31 @@ Products<!DOCTYPE html>
                             <div class="collapse" id="collapseActividades" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('activity_create') }}">Crear Actividad</a>
-                                    <a class="nav-link" href="{{ route('activity_index') }}">Inventario</a>
+                                    <a class="nav-link" href="{{ route('activity_index') }}">Inventario de actividades</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInsumos" aria-expanded="false" aria-controls="collapseInsumos">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                                Insumos
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseInsumos" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('supply_create') }}">Crear Insumo</a>
+                                    <a class="nav-link" href="{{ route('supply_index') }}">Inventario de insumos</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePrueba" aria-expanded="false" aria-controls="collapsePrueba">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-broom"></i></div>
+                                Prueba
+                                <div class="sb-sidenav-collapse-arrow"><i class="fa-solid fa-broom"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePrueba" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('create') }}">Crear</a>
+                                    <a class="nav-link" href="{{ route('index') }}">Inventario</a>
                                 </nav>
                             </div>
                             

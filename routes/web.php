@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SupplyController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CropController;
 use Illuminate\Support\Facades\Route;
@@ -66,7 +67,6 @@ Route::get('/activity_index',[ActivityController::class,'index'])->name('activit
 Route::get('/activity_create',function(){
     return view('Admin.activity_create');
     })->name('activity_create');;
-
 Route::post('/activity_post',[ActivityController::class,'store']);
 
 Route::delete('/delete/{id}',[ActivityController::class,'destroy']);
@@ -81,7 +81,27 @@ Route::delete('/deletecover/{id}',[ActivityController::class,'deletecover']);
 
 Route::put('/activity_update/{id}',[ActivityController::class,'update']);
 
+//Supply
+Route::get('/supply_index',[SupplyController::class,'index'])->name('supply_index');
 
+Route::get('/supply_create',function(){
+    return view('Admin.supply_create');
+    })->name('supply_create');;
+Route::post('/supply_post',[SupplyController::class,'store']);
+
+Route::delete('/delete/{id}',[SupplyController::class,'destroy']);
+
+Route::get('/supply_edit/{id}',[SupplyController::class,'edit']);
+
+Route::get('/supply_ver/{id}',[SupplyController::class,'show'])->name('supply_read');
+
+Route::delete('/deletesupply_image/{id}',[SupplyController::class,'deletesupply_image']);
+
+Route::delete('/deletecover/{id}',[SupplyController::class,'deletecover']);
+
+Route::put('/supply_update/{id}',[SupplyController::class,'update']);
+
+//Dashboard
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
