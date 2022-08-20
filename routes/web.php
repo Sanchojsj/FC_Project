@@ -51,7 +51,7 @@ Route::delete('/delete/{id}',[CropController::class,'destroy']);
 Route::get('/crop_edit/{id}',[CropController::class,'edit']);
 Route::get('/crop_ver/{id}',[CropController::class,'show'])->name('crop_read');
 
-Route::delete('/deleteimage/{id}',[CropController::class,'deleteimage']);
+Route::delete('/deletecrop_image/{id}',[CropController::class,'deletecrop_image']);
 Route::delete('/deletecover/{id}',[CropController::class,'deletecover']);
 
 Route::put('/crop_update/{id}',[CropController::class,'update']);

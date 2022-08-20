@@ -94,8 +94,8 @@
                                 <label class="m-2">Imagen de portada</label>
                                 <input type="file" id="input-file-now-custom-3" class="form-control m-2" name="cover">
        
-                                <!--<label class="m-2">Imagenes</label>
-                                <input type="file" id="input-file-now-custom-3" class="form-control m-2" name="images_crops[]" multiple>-->
+                                <label class="m-2">Imagenes</label>
+                                <input type="file" id="input-file-now-custom-3" class="form-control m-2" name="crop_images[]" multiple>
 
                                 <!-- <div class="col-md-6">
                                     <div class="form-group">

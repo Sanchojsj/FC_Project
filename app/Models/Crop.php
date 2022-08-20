@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\CropImage;
 class Crop extends Model
 {
     use HasFactory;
@@ -20,8 +20,8 @@ class Crop extends Model
         'cover',
     ];
 
-    public function imagesC(){
-        return $this->hasMany(Image_Crop::class);
+    public function crop_images(){
+        return $this->hasMany(CropImage::class);
     }
 }
 

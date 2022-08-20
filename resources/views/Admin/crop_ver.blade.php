@@ -20,6 +20,17 @@
                             @method('delete')
                             </form>
                             <br>
+
+                            @if (count($crops->crop_images)>0)
+                            <p>Imagenes:</p>
+                            @foreach ($crops->crop_images as $img)
+                            <img src="/crop_images/{{ $img->crop_image }}" class="img-responsive" style="max-height: 100px; max-width: 100px;" alt="" srcset="">
+                            <form action="/deletecrop_image/{{ $img->id }}" method="post">
+                                @csrf
+                                @method('delete')
+                                </form>
+                            @endforeach
+                            @endif
         
                         </div>
                         
@@ -105,11 +116,12 @@
                                     </div>
                                 </div>
                             </div>
-                                                  <label class="m-2">Imagen de Portada</label>
+
+                        <label class="m-2">Imagen de Portada</label>
                          <input type="file" id="formFileDisabled" disabled class="form-control m-2" name="cover" readonly>
 
-                         <!--<label class="m-2">Imagenes</label>
-                         <input type="file" id="input-file-now-custom-3" class="form-control m-2" name="images_crops[]" multiple>-->
+                         <label class="m-2">Imagenes</label>
+                         <input type="file" id="formFileDisabled" disabled class="form-control m-2" name="crop_images[]" multiple readonly>
 
                         <td>
                             <a href="/crop_index" class="btn btn-primary mt-3">Volver</a></td>

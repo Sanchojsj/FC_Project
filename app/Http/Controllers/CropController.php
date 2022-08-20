@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Crop;
-use App\Models\Image_Crop;
+use App\Models\CropImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -57,18 +57,18 @@ class CropController extends Controller
            $crop->save();
         }
 
-            if($request->hasFile("images_crops")){
-                $files=$request->file("images_crops");
+
+            if($request->hasFile("crop_images")){
+                $files=$request->file("crop_images");
                 foreach($files as $file){
                     $imageName=time().'_'.$file->getClientOriginalName();
                     $request['crop_id']=$crop->id;
-                    $request['image']=$imageName;
-                    $file->move(\public_path("/images_crops"),$imageName);
-                    Image_Crop::create($request->all());
+                    $request['crop_image']=$imageName;
+                    $file->move(\public_path("/crop_images"),$imageName);
+                    CropImage::create($request->all());
 
                 }
             }
-
 
             return redirect("/crop_index");
     }
@@ -129,19 +129,20 @@ class CropController extends Controller
             "cover"=>$crop->cover,
 
            ]);
-   
-           if($request->hasFile("images_crops")){
-               $files=$request->file("images_crops");
-               foreach($files as $file){
-                   $imageName=time().'_'.$file->getClientOriginalName();
-                   $request["crop_id"]=$id;
-                   $request["image"]=$imageName;
-                   $file->move(\public_path("images_crops"),$imageName);
-                   Image_Crop::create($request->all());
-   
-               }
-           }
-   
+
+           
+            if($request->hasFile("crop_images")){
+                $files=$request->file("crop_images");
+                foreach($files as $file){
+                    $imageName=time().'_'.$file->getClientOriginalName();
+                    $request['crop_id']=$crop->id;
+                    $request['crop_image']=$imageName;
+                    $file->move(\public_path("/crop_images"),$imageName);
+                    CropImage::create($request->all());
+
+                }
+            }
+
            return redirect("/crop_index");
     }
 
@@ -158,21 +159,27 @@ class CropController extends Controller
         if (File::exists("cover/".$crops->cover)) {
             File::delete("cover/".$crops->cover);
         }
+        $crop_images=CropImage::where("crop_id",$crops->id)->get();
+        foreach($crop_images as $crop_image){
+        if (File::exists("crop_images/".$crop_image->crop_image)) {
+           File::delete("crop_images/".$crop_image->crop_image);
+       }
+        }
         $crops->delete();
         return back();
 
 
    }
 
-   public function deleteimage($id){
-       $images=Image_Crop::findOrFail($id);
-       if (File::exists("images_crops/".$images->image)) {
-          File::delete("images_crops/".$images->image);
-      }
+   public function deletecrop_image($id){
+    $crop_images=CropImage::findOrFail($id);
+    if (File::exists("crop_images/".$crop_images->crop_image)) {
+       File::delete("crop_images/".$crop_images->crop_image);
+   }
 
-      Image_Crop::find($id)->delete();
-      return back();
-  }
+   CropImage::find($id)->delete();
+   return back();
+}
 
   public function deletecover($id){
    $cover=Crop::findOrFail($id)->cover;

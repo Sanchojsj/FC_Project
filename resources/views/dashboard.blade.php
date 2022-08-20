@@ -29,12 +29,13 @@
                 </div>
             </div>
         </div>
+        <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>-->
         <div class="row">
             <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-area mr-1"></i>
-                        Ejemplo Cuadro De Area
+                        Ejemplo Grafico De Area
                     </div>
                     <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
                 </div>
@@ -43,9 +44,53 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-bar mr-1"></i>
-                        Ejemplo Cuadro de Barra
+                        Ejemplo Grafico de Barras
                     </div>
-                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas>
+                        <!--<script>
+                            const ctx = document.getElementById('tabla').getContext('2d');
+                            const tabla = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orangen', 'Cya','Violet','Sky'],
+                                    datasets: [{
+                                        label: 'Ejemplo',
+                                        data: [12, 19, 13, 20, 15, 8, 12, 14, 10],
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(255, 159, 64, 1)',
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(54, 162, 235, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                            </script>-->
+                    </div>
                 </div>
             </div>
         </div>

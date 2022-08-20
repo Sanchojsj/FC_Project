@@ -21,6 +21,18 @@
                             @method('delete')
                             </form>
                             <br>
+
+                            @if (count($crops->crop_images)>0)
+                            <p>Imagenes:</p>
+                            @foreach ($crops->crop_images as $img)
+                            <img src="/crop_images/{{ $img->crop_image }}" class="img-responsive" style="max-height: 100px; max-width: 100px;" alt="" srcset="">
+                            <form action="/deletecrop_image/{{ $img->id }}" method="post">
+                                <button class="btn text-danger">X Eliminar</button>
+                                @csrf
+                                @method('delete')
+                                </form>
+                            @endforeach
+                            @endif
         
                         </div>
                         
@@ -110,13 +122,15 @@
                          <label class="m-2">Cambiar Imagen de Portada</label>
                          <input type="file" id="input-file-now-custom-3" class="form-control m-2" name="cover">
 
-                         <!--<label class="m-2">Imagenes</label>
-                         <input type="file" id="input-file-now-custom-3" class="form-control m-2" name="images_crops[]" multiple>-->
+                         
+                         <label class="m-2">Imagenes</label>
+                         <input type="file" id="input-file-now-custom-3" class="form-control m-2" name="crop_images[]" multiple>
 
-                        <button type="submit" class="btn btn-success mt-3 ">Actualizar</button> 
                         <td>
                             <a href="/crop_index" class="btn btn-primary mt-3">Volver</a></td>
                         <td>
+                            
+                        <button type="submit" class="btn btn-success mt-3 ">Actualizar</button> 
                         </form>
                    </div>
                 </div>
