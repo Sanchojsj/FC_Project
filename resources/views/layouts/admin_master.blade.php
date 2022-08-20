@@ -58,7 +58,7 @@ Products<!DOCTYPE html>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePrueba" aria-expanded="false" aria-controls="collapsePrueba">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-broom"></i></div>
                                 Prueba
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fa-solid fa-broom"></i></div>
                             </a>
                             <div class="collapse" id="collapsePrueba" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
@@ -68,7 +68,7 @@ Products<!DOCTYPE html>
                             </div>
 
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCultivos" aria-expanded="false" aria-controls="collapseCultivos">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-seedling"></i></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-seedling"></i></div>
                                 Cultivos
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -76,6 +76,18 @@ Products<!DOCTYPE html>
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('crop_create') }}">Crear Cultivo</a>
                                     <a class="nav-link" href="{{ route('crop_index') }}">Inventario</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseActividades" aria-expanded="false" aria-controls="collapseActividades">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-scissors"></i></div>
+                                Actividades
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseActividades" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('activity_create') }}">Crear Actividad</a>
+                                    <a class="nav-link" href="{{ route('activity_index') }}">Inventario</a>
                                 </nav>
                             </div>
                             
