@@ -91,6 +91,18 @@ Products<!DOCTYPE html>
                                 </nav>
                             </div>
 
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGastos" aria-expanded="false" aria-controls="collapseGastos">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
+                                Gastos Adicionales
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseGastos" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('additional_cost_create') }}">Crear Gasto Adicional</a>
+                                    <a class="nav-link" href="{{ route('additional_cost_index') }}">Lista de Gastos Adicionales</a>
+                                </nav>
+                            </div>
+
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePrueba" aria-expanded="false" aria-controls="collapsePrueba">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-broom"></i></div>
                                 Prueba

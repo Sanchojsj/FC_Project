@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdditionalCostController;
 use App\Http\Controllers\SupplyController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CropController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Models\AdditionalCost;
 use Illuminate\Http\Request;
 
 /*
@@ -100,6 +102,22 @@ Route::delete('/deletesupply_image/{id}',[SupplyController::class,'deletesupply_
 Route::delete('/deletecover/{id}',[SupplyController::class,'deletecover']);
 
 Route::put('/supply_update/{id}',[SupplyController::class,'update']);
+
+//Additional Cost
+Route::get('/additional_cost_index',[AdditionalCostController::class,'index'])->name('additional_cost_index');
+
+Route::get('/additional_cost_create',function(){
+    return view('Admin.additional_cost_create');
+    })->name('additional_cost_create');;
+Route::post('/additional_cost_post',[AdditionalCostController::class,'store']);
+
+Route::delete('/delete/{id}',[AdditionalCostController::class,'destroy']);
+
+Route::get('/additional_cost_edit/{id}',[AdditionalCostController::class,'edit']);
+
+Route::get('/additional_cost_ver/{id}',[AdditionalCostController::class,'show'])->name('additional_cost_read');
+
+Route::put('/additional_cost_update/{id}',[AdditionalCostController::class,'update']);
 
 //Dashboard
 Route::get('/dashboard', function () {

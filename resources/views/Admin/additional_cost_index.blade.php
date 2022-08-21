@@ -3,7 +3,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table mr-1"></i>
-        Insumos en Inventario <a href="/supply_create" class="btn btn-sm btn-primary">Añadir nuevo Insumo</a>
+        Lista de Gastos Adicionales <a href="/additional_cost_create" class="btn btn-sm btn-primary">Añadir Gasto Adicional</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -11,47 +11,36 @@
                 <thead class="table-dark">
                     <tr>
                         <th>ID</th>
-                        <th>Codigo Insumo</th>
                         <th>Nombre</th>
                         <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Fecha de Vencimiento</th>
                         <th>Descripcion</th>
-                        <th>Portada</th>
                         <th>Acciones</th>
                         <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
-                	@foreach($supplies as $supply)
+                	@foreach($additional_costs as $additional_cost)
                     <tr>
-                        <th scope="row">{{ $supply->id }}</th>
-                        <td>{{ $supply->supply_code }}</td>
-                        <td>{{ $supply->supply_name }}</td>
+                        <th scope="row">{{ $additional_cost->id }}</th>
+                        <td>{{ $additional_cost->additional_cost_name }}</td>
                         
-                        @if($supply->price> '0')
-                            <td>{{ $supply->price}}</td>
+                        @if($additional_cost->price> '0')
+                            <td>{{ $additional_cost->price}}</td>
                         @else
                             <td>Sin precio disponible</td>
                         @endif
-
-                        @if($supply->amount > '0')
-                            <td>{{ $supply->amount }}</td>
-                        @else
-                            <td>Insumo no disponible</td>
-                        @endif
-
-                        <td>{{ $supply->expiration_date }}</td>
-                        <td>{{ $supply->body }}</td>
-                        <td><img src="cover/{{ $supply->cover }}" class="img-responsive" style="max-height:100px; max-width:100px" alt="" srcset=""></td>
-                        <td><a href="/supply_edit/{{ $supply->id }}" class="btn btn-sm btn-info">editar</a>
-                            <a href="/supply_ver/{{ $supply->id }}" class="btn btn-sm btn-success">ver mas</a></td>
+                        <td>{{ $additional_cost->body }}</td>
+                        <td><a href="/additional_cost_edit/{{ $additional_cost->id }}" class="btn btn-sm btn-info">editar</a>
+                            <a href="/additional_cost_ver/{{ $additional_cost->id }}" class="btn btn-sm btn-success">ver mas</a></td>
                         <td>
-                                <form action="/delete/{{ $supply->id }}" method="post">
+                                <form action="/delete/{{ $additional_cost->id }}" method="post">
                                  <button class="btn btn-sm btn-danger" onclick="return confirm('Seguro de Eliminar?');" type="submit">Eliminar</button>
                                  @csrf
                                  @method('delete')
                                 </form>
+                        </td>
+                        <td>
+                            
                         </td>
                     </tr>
                     @endforeach
