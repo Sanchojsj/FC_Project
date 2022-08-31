@@ -22,14 +22,11 @@
     
  ### For Migration table in database [Create database name as ```sdproject```]
  
+    php artisan key:generate
+ 
     php artisan migrate
     
 ### Server ON ```url: http://127.0.0.1:8000/```
 
     php artisan serve
 
-## Our valuable Contributors👩‍💻👨‍💻 :
-
-<p align="center">
-  <img src="https://contributors-img.web.app/image?repo=ekramasif/SD_Project" />
-</p>
